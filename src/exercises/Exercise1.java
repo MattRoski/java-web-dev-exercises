@@ -32,27 +32,21 @@ public class Exercise1 {
     if(sentance.toLowerCase().contains(searchWord.toLowerCase())){
         System.out.println(true);
         removeWord(sentance,searchWord);
-    };
+    } else{
+        System.out.println("Sentance does not contain that word.");
+    }
 
     }
     public static void removeWord(String str, String word){
-        // Split the string using split() method
         String msg[] = str.split(" ");
         String new_str = "";
 
-        // Iterating the string using for each loop
         for (String words : msg) {
-
-            // If desired word is found
-            if (!words.equals(word)) {
-
-                // Concat the word not equal to the given
-                // word
+            if (!words.toLowerCase().equals(word.toLowerCase())) {
                 new_str += words + " ";
             }
         }
 
-        // Print the new String
         System.out.print(new_str);
     };
 
